@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Poppins, sans-serif;
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* altura fixa em pixels */
+  box-shadow: 0 0.3px 0 white;
+  background-color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10; /* garante que fique acima do conteúdo */
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  width: 35%;
+  height: 60%;
+  border-radius: 10px;
+}
+
+.nav-a {
+  color: #e1e5e9;
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-a:hover {
+  color: #2766ec; 
+  font-weight: bold;
+}
+
+.ativo {
+  color: #2766ec ;
+}
+
+#underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: #2766ec;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-header{
+  cursor: pointer;
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8%;
+  height: 60%;
+  border-radius: 10px;
+  border: none;
+  background-color: #2766ec;
+  color: #e1e5e9;
+  font-weight: bold;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.button-header:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.conteudo-1 {
+  flex: 1;
+  width: 100%;
+  padding-top: 80px; /* mesma altura do header */
+  background-color: #111827;
+}
+
+section {
+  height: 100vh; /* 100% da altura da viewport */
+  scroll-margin-top: 80px; /* evita que o header esconda o topo ao clicar no menu */
+}
+
+.div-texto-inicio {
+  position: absolute;
+  flex-direction: column;
+  display: flex;
+  width: 40%;
+  height: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.h1-inicio {
+  position: relative;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  font-size: 32px;
+  color: #2766ec;
+  font-weight: bold;
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.p-inicio{
+  position: relative;
+  top: 0;
+  display: flex;
+  white-space: pre-line;
+  text-align: center;
+  line-height: 1.7;
+  margin-top: 24px;
+  height: 40%;
+  font-size: 20px;
+  color: #e1e5e9;
+}
+
+.img-demostrativa-1 {
+  position: absolute;
+  top: 80%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  display: block;           /* Faz a imagem se comportar como bloco */
+  max-width: 200px;         /* Máximo de largura */
+  width: 80%;               /* Responsivo (80% do container) */
+  height: auto;             /* Mantém proporção original */
+  animation: sobeDesce1 3s ease-in-out infinite;
+}
+
+@keyframes sobeDesce1 {
+  0% {
+    transform: translate(-50%, -50%) translateY(-15px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(-15px);
+  }
+}
+
+.img-demostrativa-2 {
+  position: absolute;
+  top: 55%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+  display: block;           /* Faz a imagem se comportar como bloco */
+  max-width: 200px;         /* Máximo de largura */
+  width: 80%;               /* Responsivo (80% do container) */
+  height: auto;             /* Mantém proporção original */
+  animation: sobeDesce2 3s ease-in-out infinite;
+}
+
+/* Agora combinando as transformações */
+@keyframes sobeDesce2 {
+  0% {
+    transform: translate(-50%, -50%) translateY(-8px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(-8px);
+  }
+}
+
+.img-demostrativa-3 {
+  position: absolute;
+  top: 35%;
+  left: 15%;
+  display: block;
+  max-width: 200px;
+  width: 80%;
+  height: auto;
+  animation: sobeDesce3 3s ease-in-out infinite;
+}
+
+/* Agora combinando as transformações */
+@keyframes sobeDesce3 {
+  0% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-15px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+}
+
+#projetos {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px 5%;
+  flex-wrap: wrap;
+}
+
+.cards {
+  cursor: pointer;
+  width: 30%;
+  height: 500px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease;
+}
+
+.cards:hover {
+  transform: scale(1.05);
+  border: 1px solid #2766ec;
+  border-radius: 15px;
+}
+
+.div-cards-img {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e1e5e9;
+  overflow: hidden; /* Isso força a imagem a não ultrapassar os cantos arredondados */
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.div-cards-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ou contain */
+  border-radius: inherit; /* Faz a imagem herdar o border-radius da div */
+}
+
+.div-cards-descriçao{
+  display: flex;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  background-color:#191c27;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.h1-projetos {
+  text-align: center;
+  padding-left: 20px;
+  font-size: 24px;
+  color: #e1e5e9;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.p-projetos {
+  text-align: center;
+  margin-top: 10px;
+  padding: 0 20px;
+  font-size: 16px;
+  color: #e1e5e9;
+  line-height: 1.5;
+}
+
+.div-span-projetos {
+  display: flex;
+  justify-content: center;
+  gap: 10px;               
+  margin-top: 15px;
+  align-items: center;
+  color: #e1e5e9;
+}
+
+.span-projetos {
+  display: block;
+  background-color: #252525;
+  color: #2766ec;
+  border: 1px solid #2766ec;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Quando o CARD está em hover */
+.cards:hover .span-projetos {
+  background-color: #2766ec; /* azul mais claro */
+  color: #e1e5e9; /* texto branco */
+}
+
+.button-projetos{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  margin-top: 20px;
+  width: 30%;
+  height: 30px;
+  border-radius: 10px;
+  border : 1px solid #e1e5e9;
+  background-color: #191c27;
+  color: #e1e5e9;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.button-projetos:hover {
+  box-shadow: 0 0 8px rgba(39, 102, 236, 0.7);
+}
