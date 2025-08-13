@@ -207,6 +207,7 @@ nav{
 .social-card:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
 }
 
 /* Cores por rede */
@@ -218,6 +219,7 @@ nav{
 
 .telefone{
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 80%;
