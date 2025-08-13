@@ -42,3 +42,22 @@ window.addEventListener("load", () => {
   underline.style.width = activeLink.offsetWidth + "px";
 });
 
+const buttonContato = document.querySelector(".button-header");
+const opacidade = document.querySelector(".opacidade");
+const contatoDiv = document.querySelector(".contato-div");
+const fechaContatoDiv = document.querySelector(".fecha-contato-div");
+
+buttonContato.addEventListener("click", () => {
+  if (contatoDiv.style.display === "flex") {
+    contatoDiv.style.display = "none";
+    opacidade.style.display = "none";
+  } else {
+    contatoDiv.style.display = "flex";
+    opacidade.style.display = "block";
+  }
+});
+
+fechaContatoDiv.addEventListener("click", () => {
+  contatoDiv.style.display = "none";
+  opacidade.style.display = "none";
+});
