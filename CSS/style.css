@@ -363,6 +363,76 @@ section {
   }
 }
 
+#Certificados {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente */
+}
+
+.div-certificados{
+  margin-top: -100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 70%;
+}
+
+.certificado{
+  position: relative;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 80%;
+  height: 15%;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2766ec;
+  transition: transform 0.2s ease;
+}
+
+.certificado:not(.ativo):hover {
+  transform: scale(1.05);
+}
+
+.certificado.ativo {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  transform: scale(1.05);
+}
+
+.certificado-p{
+  color: #e1e5e9;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+.certificado-svg{
+  position: absolute;
+  right: 100px;
+  transition: transform 0.3s ease;
+}
+
+.certificado-svg.ativo{
+  transform: rotate(180deg);
+}
+
+.certificado-img{
+  width: 84%;
+  height: 31.5%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #e1e5e9;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
 #projetos {
   display: flex;
   justify-content: space-between;
@@ -370,7 +440,7 @@ section {
   flex-wrap: wrap;
 }
 
-.cards {
+.cards-projetos {
   cursor: pointer;
   width: 30%;
   height: 500px;
@@ -379,7 +449,7 @@ section {
   transition: transform 0.4s ease;
 }
 
-.cards:hover {
+.cards-projetos:hover {
   transform: scale(1.05);
   border: 1px solid #2766ec;
   border-radius: 15px;

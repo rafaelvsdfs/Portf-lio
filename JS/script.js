@@ -61,3 +61,55 @@ fechaContatoDiv.addEventListener("click", () => {
   contatoDiv.style.display = "none";
   opacidade.style.display = "none";
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const certificado1 = document.getElementById("certificado-1");
+  const certificado2 = document.getElementById("certificado-2");
+  const certificado3 = document.getElementById("certificado-3");
+
+  const CertificadoImg1 = document.getElementById("certificado-img-1");
+  const CertificadoImg2 = document.getElementById("certificado-img-2");
+  const CertificadoImg3 = document.getElementById("certificado-img-3");
+
+  function ativarCertificado(cert) {
+    // remove o "ativo" de todos certificados e dos SVGs
+    [certificado1, certificado2, certificado3].forEach(c => {
+      c.classList.remove("ativo");
+      const svg = c.querySelector(".certificado-svg");
+      if (svg) svg.classList.remove("ativo");
+    });
+
+    // adiciona o "ativo" no certificado clicado e no SVG
+    cert.classList.add("ativo");
+    const svg = cert.querySelector(".certificado-svg");
+    if (svg) svg.classList.add("ativo");
+  }
+
+  function mostrarOuFechar(cert, el) {
+    const svg = cert.querySelector(".certificado-svg");
+
+    if (el.style.display === "flex") {
+      // se já está aberto, fecha
+      el.style.display = "none";
+      cert.classList.remove("ativo");
+      if (svg) svg.classList.remove("ativo"); // remove também do SVG
+    } else {
+      // fecha todos os outros
+      [CertificadoImg1, CertificadoImg2, CertificadoImg3].forEach(e => e.style.display = "none");
+      [certificado1, certificado2, certificado3].forEach(c => {
+        c.classList.remove("ativo");
+        const s = c.querySelector(".certificado-svg");
+        if (s) s.classList.remove("ativo");
+      });
+
+      // abre o clicado
+      el.style.display = "flex";
+      cert.classList.add("ativo");
+      if (svg) svg.classList.add("ativo"); // adiciona ativo no SVG
+    }
+  }
+
+  certificado1.addEventListener("click", () => mostrarOuFechar(certificado1, CertificadoImg1));
+  certificado2.addEventListener("click", () => mostrarOuFechar(certificado2, CertificadoImg2));
+  certificado3.addEventListener("click", () => mostrarOuFechar(certificado3, CertificadoImg3));
+});
