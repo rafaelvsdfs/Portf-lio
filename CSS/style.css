@@ -426,11 +426,39 @@ section {
   width: 84%;
   height: 31.5%;
   display: none;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 15px;
   background-color: #e1e5e9;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+
+.certificado-button {
+  cursor: pointer;
+  width: 30%;
+  height: 50px; 
+  border-radius: 10px;
+  background-color: #2766ec;
+  color: #e1e5e9;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  display: flex;           
+  align-items: center;     
+  justify-content: center; 
+  gap: 8px;                
+  text-decoration: none;   /* remove sublinhado */
+  border: none;           
+}
+
+.certificado-button:active {
+  background-color: #5989f0;
+}
+
+.certificado-button svg {
+  display: inline-block;
+  vertical-align: middle; /* garante alinhamento com o texto */
 }
 
 #projetos {
