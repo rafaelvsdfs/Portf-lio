@@ -1,3 +1,5 @@
+/* ESTILIZAÇOES GERAIS */
+
 * {
   margin: 0;
   padding: 0;
@@ -16,18 +18,20 @@ body {
   flex-direction: column;
 }
 
+/* ESTILIZAÇOES DO HEADER */
+
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px; /* altura fixa em pixels */
+  height: 80px; 
   box-shadow: 0 0.3px 0 white;
   background-color: #111827;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 4; /* garante que fique acima do conteúdo */
+  z-index: 4; 
 }
 
 nav{
@@ -88,8 +92,12 @@ nav{
   transform: translateY(-50%) scale(1.1);
 }
 
+/* FIM DA ESTILIZAÇAO DO HEADER */
+
+/* ESTILIZAÇAO DO POP UP DE CONTATO */
+
 .opacidade {
-  display: none; /* Inicialmente escondido */
+  display: none;
   z-index: 3;
   position: fixed;
   top: 0;
@@ -231,6 +239,8 @@ nav{
   color: #e1e5e9;
 }
 
+/* FIM DA ESTILIZAÇAO DO POP UP DE CONTATO */
+
 .conteudo-1 {
   flex: 1;
   width: 100%;
@@ -241,6 +251,8 @@ section {
   height: 100vh; /* 100% da altura da viewport */
   scroll-margin-top: 80px; /* evita que o header esconda o topo ao clicar no menu */
 }
+
+/* ESTILIZAÇAO DA SEÇAO INICIO */
 
 .div-texto-inicio {
   position: absolute;
@@ -363,6 +375,10 @@ section {
   }
 }
 
+/* FIM DA ESTILIZAÇAO DA SEÇAO INICIO */
+
+/* ESTILIZAÇAO DA SEÇAO CERTIFICADOS */
+
 #Certificados {
   display: flex;
   justify-content: center; /* Centraliza horizontalmente */
@@ -460,6 +476,10 @@ section {
   display: inline-block;
   vertical-align: middle; /* garante alinhamento com o texto */
 }
+
+/* FIM DA ESTILIZAÇAO DA SEÇAO CERTIFICADOS */
+
+/* ESTILIZAÇAO DA SEÇAO PROJETO */
 
 #projetos {
   display: flex;
@@ -577,3 +597,5 @@ section {
 .button-projetos:hover {
   box-shadow: 0 0 8px rgba(39, 102, 236, 0.7);
 }
+
+/* FIM DA ESTILIZAÇAO DA SEÇAO PROJETO */
